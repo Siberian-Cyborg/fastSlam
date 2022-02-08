@@ -1,0 +1,35 @@
+<launch>
+    <arg name="stateestimation" default="basic"/>
+
+    <group if="$(eval arg('stateestimation') == 'simple_odometry')">
+        <node pkg="basicstateestimation" type="wheel_rev_odometry.py" name="simple_odometry">
+        </node>
+    </group>
+
+	<group if="$(eval arg('stateestimation') == 'basic')">
+        <node pkg="basicstateestimation" type="wheel_rev_odometry.py" name="simple_odometry">
+        </node>
+
+		<arg name="basicstateestimation" default="gps"/>
+		
+		<group if="$(eval arg('basicstateestimation') == 'gps')">
+		    <node pkg="basicstateestimation" type="oxts_odometry.py" args="" name="stateestimation">
+		    </node>
+		    <node pkg="basicstateestimation" type="EKF_odometry2.py" args="" name="EKF_odometry2">
+		    </node>
+		    <node pkg="basicstateestimation" type="EKF_odometry_Erik.py" args="" name="EKF_odometry_Erik">
+		    </node>
+		</group>
+
+		
+		<group if="$(eval arg('basicstateestimation') == 'slam')">
+		    <node pkg="basicstateestimation" type="slam_odometry.py" args="" name="stateestimation">
+		    </node>
+		</group>
+
+		<group if="$(eval arg('basicstateestimation') == 'future')">
+		    <node pkg="basicstateestimation" type="future_odometry.py" args="" name="future_stateestimation">
+		    </node>
+		</group>
+	</group>
+</launch>

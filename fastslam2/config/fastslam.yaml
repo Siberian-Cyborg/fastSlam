@@ -1,0 +1,62 @@
+# if a observation has a data association probability below this number, a new landmark is created
+p_new_landmark: 0.01 #0.01
+# multiply particle weight with this number to punish it
+punish_weight: 0.05
+
+motionNoise3D:
+  r00: 0.01 #for longitudinal velocity, best so far 0.01
+  n01: 0.0
+  n02: 0.0
+  n10: 0.0
+  r11: 0.01  #for lateral velocity, best so far 0.01
+  n12: 0.0
+  n20: 0.0
+  n21: 0.0
+  r22: 0.01 #for rotational speed, best so far 0.01
+
+#measurement noise
+Q:
+  _00: 0.3 # 0.3 range
+  _01: 0.0
+  _10: 0.0
+  _11: 0.03 # 0.03 bearing
+
+offset:
+  x: 0.0
+  y: 0.0
+  yaw: 0.0
+
+
+queue_size: 80
+
+# we wait for this amount of sec. after global message was sent to stop updating the map
+# it is a good idea to not immediately stop udpdating after global path was found
+# because the last cones could still be missing or have a high uncertainty
+wait_time_after_closure: 2
+
+# when looking for data associations we only consider cones this far away from the observation
+max_matching_distance: 2 # 2
+
+# only observations in this range are taken into account
+max_considered_distance: 35.0
+min_considered_distance: 2.0
+
+# cone covariance will never fall below this threshold. This should make sure that cones are not placed to close
+# setting this to zero is not limiting the covariances. The cones for the competition have a diameter of around 28cm
+min_cone_covariance: 0.0 #0.14
+# the center points of the cones should be at least this far away from each other
+# setting this to zero turns this filtering off
+cones_minimum_dist: 1 # 2
+# whenever the cones is associated its counter is increased by this number
+# the lower the number the faster cones are deleted if not associated
+# must be an int greater than zero
+cone_counter: 2 # 3
+
+amz_sim: false
+loc_mode: false
+gps_fusion: false
+map_cleaning: true
+
+
+# threshold for cones to be published in the slam's map (only covariance less than threshold is published)
+cone_covariance_threshold: 3

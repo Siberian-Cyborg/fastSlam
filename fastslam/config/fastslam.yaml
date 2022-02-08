@@ -1,0 +1,31 @@
+p_new_landmark: 0.01
+
+noise:
+  r1: 0.05
+  r2: 0.03
+  tlong: 0.03
+  tlat: 0.0 #0.5
+
+offset:
+  x: 0.0
+  y: 0.0
+  yaw: 0.0
+
+Q:
+  _00: 0.3
+  _01: 0.0
+  _10: 0.0
+  _11: 0.03
+
+queue_size: 80
+
+max_matching_distance: 1.0
+max_considered_distance: 25.0
+min_considered_distance: 2.0
+
+sim: false
+loc_mode: false
+gps_fusion: false
+
+# threshold for cones to be published in the slam's map (only covariance less than threshold is published)
+cone_covariance_threshold: 3.0

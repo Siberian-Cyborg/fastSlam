@@ -1,0 +1,16 @@
+<launch>    
+    <arg name="debug" default="false"/>
+
+    <group unless="$(arg debug)">
+        <node name="fastslam_node" pkg="fastslam2" type="node" output="screen">
+            <rosparam command="load" file="$(find fastslam2)/config/fastslam.yaml" />
+        </node>
+    </group>    
+
+    <group if="$(arg debug)">
+        <node name="fastslam_node" pkg="fastslam2" type="node" output="screen" launch-prefix="gdb -ex run --args">
+            <rosparam command="load" file="$(find fastslam2)/config/fastslam.yaml" />
+        </node>
+    </group>
+    
+</launch>
