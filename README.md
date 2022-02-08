@@ -12,5 +12,8 @@ Here two videos showcasing the autonomous car:
 https://user-images.githubusercontent.com/96864967/153071922-c44dafe8-4bd7-445a-928b-6b19d9e88780.mp4
 
 
+
+Don't mind the steering wheel, it was not attached: 
+
 https://user-images.githubusercontent.com/96864967/153071939-32edc54f-5aa5-407a-a6fb-19251c83783b.MP4
 
