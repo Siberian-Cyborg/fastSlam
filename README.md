@@ -5,3 +5,12 @@ This is just one part of the entire software stack for the autonomous car. The c
 
 Everything is described here:
 [Documentation.pdf](https://github.com/Siberian-Cyborg/fastSlam/files/8027131/Documentation.pdf)
+
+Here two videos showcasing the autonomous car:
+
+
+https://user-images.githubusercontent.com/96864967/153071922-c44dafe8-4bd7-445a-928b-6b19d9e88780.mp4
+
+
+https://user-images.githubusercontent.com/96864967/153071939-32edc54f-5aa5-407a-a6fb-19251c83783b.MP4
+
