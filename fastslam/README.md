@@ -1,7 +1,5 @@
 # Fast slam
 
-Implementation of [1] modified for db019/db020. Uses cones in local frames (see custom\_msgs) and velocities (nav\_msgs/Odometry). Will output map + odometry.
-
 [1] Montemerlo, M., Thrun, S., Koller, D. and Wegbreit, B., 2002. FastSLAM: A factored solution to the simultaneous localization and mapping problem.
 
 ## Getting Started
@@ -54,15 +52,5 @@ catkin_test_results (catkin_ws)/build/fastslam/
 For some reason with `catkin run_tests` failing tests will not result in an non-zero exit code???
 So you need to run the second command to actually see if something failed or not.
 TODO():investigate
-
-## Authors / Contact people
-
-* **Ahmed Agha** - *Initial version*
-* **Stan Guerassimov** - *Maintainer 2019/2020*
-
-## Acknowledgments
-
-* based on: https://github.com/snmnmin12/fastslam/
-* tested in 2019 also in FSSim
 
 
